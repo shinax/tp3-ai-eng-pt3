@@ -31,7 +31,7 @@ class Settings:
 
         callbacks = []
 
-        langfuse = Langfuse(
+        Langfuse(
             public_key=os.environ["LANGFUSE_PUBLIC_KEY"],
             secret_key=os.environ["LANGFUSE_PRIVATE_KEY"],
             host=os.environ["LANGFUSE_BASE_URL"],

@@ -104,7 +104,10 @@ def run_tests():
     print("=" * 80)
     print(f"Total: {len(test_queries)}")
     print(f"{GREEN}Pasadas: {passed}{RESET}")
-    print(f"{RED}Fallidas: {failed}{RESET}")
+    if failed:
+        print(f"{RED}Fallidas: {failed}{RESET}")
+    else:
+        print(f"Fallidas: {failed}")
     accuracy = (passed / len(test_queries)) * 100
     print(f"Precisión: {accuracy:.1f}%")
     print("=" * 80)
@@ -128,7 +131,7 @@ def run_tests():
             color = GREEN
         else:
             color = RED
-        print(f"{color}  {domain}: {stats['correct']}/{stats['total']} ({acc:.0f}%) {RESET}")   
+        print(f"  {domain}: {stats['correct']}/{stats['total']} {color}({acc:.0f}%) {RESET}")   
 
 
 if __name__ == "__main__":

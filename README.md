@@ -67,5 +67,7 @@ Esto muestra las preguntas de prueba que cubren los dominios HR, IT Support, Fin
 
 ## Notas
 
-- Si falta un documento de dominio, el programa fallará con `FileNotFoundError`.
-- El prototipo incluye datos de ejemplo en `data/`.
+Por mal manejo de mi tiempo (en parte por unas semanas laborales intensas), tuve que hacer esto a las apuradas. Al no haber hecho el TP anterior, también por temas de tiempo, usé Copilot para ayudarme un poco con lo referido a esa parte.
+Descubrí que a Copilot le cuesta bastante arreglar errores de código causados por deprecaciones en paquetes, lo cual me resulta curioso, dado que buscando en google se encuentran muy rápido las soluciones y también porque muchos de los errores esos aparecen en los logs a veces con links a documentación del cambio.
+
+Me parece que la integración con LangFuse no está funcionando, logra autenticarse pero no veo que lleguen traces al dashboard. Intenté arreglarlo pero no lo logré. Estoy segura de que tiene que ver con cómo manejé los callbacks.
