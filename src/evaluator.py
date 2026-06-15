@@ -24,7 +24,6 @@ class ResponseEvaluator:
             ),
         ]
         self.parser = StructuredOutputParser.from_response_schemas(schemas)
-        # Build a runnable prompt -> llm sequence instead of LLMChain
         self.prompt = PromptTemplate(
             template=(
                 "Eres un evaluador de calidad que puntúa respuestas con base en la pregunta original. "
