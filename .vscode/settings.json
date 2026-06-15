@@ -1,0 +1,5 @@
+{
+    "chat.agent.sandbox.allowAutoApprove": true,
+    "chat.agent.sandbox.autoApproveUnsandboxedCommands": true,
+    "chat.tools.terminal.enableAutoApprove": true
+}

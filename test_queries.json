@@ -1,0 +1,12 @@
+[
+  {"query": "¿Cuántos días de vacaciones me corresponden este año?", "expected_domain": "HR"},
+  {"query": "Mi laptop no arranca y muestra error de disco, ¿qué debo hacer?", "expected_domain": "IT Support"},
+  {"query": "¿Puedo reclamar viáticos sin factura?", "expected_domain": "Finance"},
+  {"query": "¿Cómo gestionamos reclamaciones de empleados con el área legal?", "expected_domain": "Legal"},
+  {"query": "Necesito cambiar mi cuenta bancaria para el pago de sueldo.", "expected_domain": "HR"},
+  {"query": "La red Wi-Fi de la oficina no conecta en el tercer piso.", "expected_domain": "IT Support"},
+  {"query": "¿Cuál es el proceso para presentar un presupuesto anual?", "expected_domain": "Finance"},
+  {"query": "¿Qué documentación exige legal para revisar contratos de proveedor?", "expected_domain": "Legal"},
+  {"query": "Tengo dudas sobre mi liquidación y finiquitos.", "expected_domain": "HR"},
+  {"query": "¿Podemos usar herramientas de terceros para backups?", "expected_domain": "IT Support"}
+]
