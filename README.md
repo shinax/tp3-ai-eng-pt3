@@ -50,13 +50,18 @@ source .venv/bin/activate
 python -m src.main
 ```
 
-4. Probar consultas definidas:
+4. Validar el formato de entrada de las consultas definidas:
 
 ```bash
 python3 -m json.tool test_queries.json
 ```
 
 Esto muestra las preguntas de prueba que cubren los dominios HR, IT Support, Finance y Legal.
+
+5. Correr tests:
+```bash
+python run_tests.py
+```
 
 ## Diseño técnico
 
