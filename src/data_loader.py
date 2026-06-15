@@ -33,6 +33,8 @@ def build_domain_retrievers(settings: Settings) -> Dict[str, FAISS]:
 
         documents = load_domain_documents(file_path)
         vector_store = FAISS.from_documents(documents, embeddings)
-        retrievers[label] = vector_store.as_retriever(search_kwargs={"k": settings.retriever_k})
+        retrievers[label] = vector_store.as_retriever(
+            search_kwargs={"k": settings.retriever_k}
+        )
 
     return retrievers

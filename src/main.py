@@ -1,10 +1,13 @@
-import os
 from pathlib import Path
+
+from dotenv import load_dotenv
 
 from .config import Settings
 from .data_loader import build_domain_retrievers
 from .orchestrator import Orchestrator
 from .evaluator import ResponseEvaluator
+
+load_dotenv()
 
 
 def ensure_data_files():
