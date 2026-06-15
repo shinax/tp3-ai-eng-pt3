@@ -8,6 +8,10 @@ from src.data_loader import build_domain_retrievers
 from src.orchestrator import Orchestrator
 from src.evaluator import ResponseEvaluator
 
+GREEN = "\033[32m"
+RED = "\033[31m"
+RESET = "\033[0m"
+
 
 def run_tests():
     """Ejecuta las queries de prueba y reporta resultados."""
@@ -61,7 +65,7 @@ def run_tests():
 
             # Verificar clasificación
             is_correct = domain == expected_domain
-            status = "✓ PASS" if is_correct else "✗ FAIL"
+            status = f"{GREEN}✓ PASS{RESET}" if is_correct else f"{RED}✗ FAIL{RESET}"
 
             print(f"Dominio clasificado: {domain} {status}")
             print(f"Puntuación: {score}/10")
@@ -83,7 +87,7 @@ def run_tests():
                 failed += 1
 
         except Exception as e:
-            print(f"✗ ERROR: {e}")
+            print(f"{RED}✗ ERROR: {e}{RESET}")
             results.append(
                 {
                     "query": query,
@@ -99,8 +103,8 @@ def run_tests():
     print("RESUMEN DE PRUEBAS")
     print("=" * 80)
     print(f"Total: {len(test_queries)}")
-    print(f"Pasadas: {passed}")
-    print(f"Fallidas: {failed}")
+    print(f"{GREEN}Pasadas: {passed}{RESET}")
+    print(f"{RED}Fallidas: {failed}{RESET}")
     accuracy = (passed / len(test_queries)) * 100
     print(f"Precisión: {accuracy:.1f}%")
     print("=" * 80)
@@ -120,7 +124,11 @@ def run_tests():
     for domain in sorted(domains.keys()):
         stats = domains[domain]
         acc = (stats["correct"] / stats["total"]) * 100
-        print(f"  {domain}: {stats['correct']}/{stats['total']} ({acc:.0f}%)")
+        if acc == 100:
+            color = GREEN
+        else:
+            color = RED
+        print(f"{color}  {domain}: {stats['correct']}/{stats['total']} ({acc:.0f}%) {RESET}")   
 
 
 if __name__ == "__main__":
